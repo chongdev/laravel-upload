@@ -61,7 +61,7 @@
 
 
                         <div class="mb-1 d-flex justify-content-between">
-                            <div>Upload speed: <span class="percent">0%</span></div>
+                            <div>Upload Progress: <span class="percent">0%</span></div>
                             <div class="timer">00:00:00.00</div>
                             {{-- <div class="timers">00:00:00.00</div> --}}
                         </div>
@@ -195,20 +195,25 @@
 
                     $($input).val('');
                     $('[for=file1]').text('Choose file');
-                    var percentVal = '0%';
-                    bar.width(percentVal)
-                    percent.html(percentVal);
 
 
-                    xhr.done( function(){
-                        console.log( 'done...' );
+
+                    xhr.done( function( res ){
+
+                        alert('Successfully');
+                        // alert('File Has Been Uploaded Successfully');
+
+                        console.log( 'done...', res );
                     } )
-                    .fail( function(){
-                        console.log( 'fail...' );
+                    .fail( function( res ){
+
+                        alert('Fail');
+
+                        console.log( 'fail...', res );
                     } )
 
                     // console.log( xhr );
-                    alert('File Has Been Uploaded Successfully');
+
                 }
 
             });
