@@ -17,5 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/vue', function ()
+{
+    return view('vue');
+});
 Route::post('/upload', 'UploadController@store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
